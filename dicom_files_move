@@ -1,0 +1,6 @@
+%move dicom files to another folder
+for i=1:1:240
+I=dicomread(['E:\Mango\PT00998-2\4\',num2str(i)]);
+metadata = dicominfo(['E:\Mango\PT00998-2\4\',num2str(i)]);
+dicomwrite(I, ['E:\Mango\pet\',num2str(i),'dcm'],metadata,'CreateMode', 'copy');
+end
